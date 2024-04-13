@@ -1,0 +1,147 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is your name?",
+      "type": "string",
+      "required": true
+    },
+    {
+      "id": 2,
+      "question": "What is your phone number?",
+      "type": "string",
+      "required": false
+    },
+    {
+      "id": 3,
+      "question": "What is your goal for learning programming?",
+      "type": "multiple",
+      "options": [
+        { "key": "Build Websites", "value": 0 },
+        { "key": "Data Science & Analytics", "value": 1 }
+      ],
+      "required": true,
+      "subQuestions": [
+        {
+          "id": 4,
+          "value": 0,
+          "question": "What frontend framework are you interested in?",
+          "type": "multiple",
+          "options": [
+            { "key": "React", "value": 0 },
+            { "key": "Vue", "value": 1 }
+          ],
+          "required": true,
+          "subQuestions": [
+            {
+              "id": 5,
+              "value": 0,
+              "question": "Are you familiar with React?",
+              "type": "multiple",
+              "options": [
+                { "key": "No", "value": 0 },
+                { "key": "Yes", "value": 1 }
+              ],
+              "required": true,
+              "result": [
+                {
+                  "key": "Please study ReactJS at: https://react.dev/",
+                  "value": 0
+                },
+                {
+                  "key": "That's great you should start building react applications",
+                  "value": 1
+                }
+              ],
+              "subQuestions": []
+            },
+            {
+              "id": 6,
+              "value": 1,
+              "question": "Are you familiar with Vue?",
+              "type": "multiple",
+              "options": [
+                { "key": "No", "value": 0 },
+                { "key": "Yes", "value": 1 }
+              ],
+              "required": true,
+              "result": [
+                {
+                  "key": "Please study VueJS at: https://vuejs.org/",
+                  "value": 0
+                },
+                {
+                  "key": "That's great you should start building VueJS applications",
+                  "value": 1
+                }
+              ],
+              "subQuestions": []
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "value": 1,
+          "question": "What programming language are you comfortable with?",
+          "type": "multiple",
+          "options": [
+            { "key": "Python", "value": 0 },
+            { "key": "R", "value": 1 }
+          ],
+          "required": true,
+          "subQuestions": [
+            {
+              "id": 8,
+              "value": 0,
+              "question": "Are you familiar with data visualization libraries like Matplotlib or Plotly?",
+              "type": "multiple",
+              "options": [
+                { "key": "No", "value": 0 },
+                { "key": "Yes", "value": 1 }
+              ],
+              "required": true,
+              "result": [
+                {
+                  "key": "You can explore advanced data visualization techniques.",
+                  "value": 1
+                },
+                {
+                  "key": "Start by learning data visualization libraries for better analysis.",
+                  "value": 0
+                }
+              ],
+              "subQuestions": []
+            },
+            {
+              "id": 9,
+              "value": 1,
+              "question": "What statistical analysis techniques do you want to learn?",
+              "type": "multiple",
+              "options": [
+                { "key": "Regression analysis", "value": 0 },
+                { "key": "Machine learning algorithms", "value": 1 },
+                { "key": "Want more advance", "value": 2 }
+              ],
+              "required": true,
+              "result": [
+                {
+                  "key": "R is well-suited for performing regression analysis.",
+                  "value": 0
+                },
+                {
+                  "key": "Explore R's capabilities in implementing machine learning algorithms.",
+                  "value": 1
+                },
+                {
+                  "key": "Please Check https://www.r-project.org/ for more details",
+                  "value": 2
+                }
+              ],
+              "subQuestions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

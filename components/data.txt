@@ -1,0 +1,31 @@
+How to add data to json
+
+1. Add the question object in questions array. 
+
+2. Add options array if the question type is multiple.
+
+3. Add resultCode to option object in options array to tell that this is the final question.
+
+4. When resultCode is added to the option object in options array, 
+then add the result object in results array with the same resultCode, 
+and with a message to show back at the end.
+
+5. Add parentQuestionId to make a question child of a question.
+
+question: {
+    "id": Number,
+    "parentQuestionId", parentId,
+    "question": "Question string",
+    "type": "string | number | multiple",
+    "required": "false | true"
+    "options": [
+        { "key": "No", "value": 0, "resultCode": 1 },
+        { "key": "Yes", "value": 1, "resultCode": 2 }
+    ],
+},
+
+result {
+    id: Number,
+    resultCode: Number,
+    message: "Message to show",
+}
