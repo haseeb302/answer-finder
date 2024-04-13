@@ -1,0 +1,146 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is your email?",
+      "type": "string",
+      "required": true
+    },
+    {
+      "id": 2,
+      "question": "What is your phone number?",
+      "type": "number",
+      "required": false
+    },
+    {
+      "id": 3,
+      "question": "What is your goal for learning programming?",
+      "type": "multiple",
+      "options": [
+        { "key": "Build Websites", "value": "website" },
+        { "key": "Data Science & Analytics", "value": "data" }
+      ],
+      "required": true
+    },
+    {
+      "id": 4,
+      "parentQuestionId": 3,
+      "value": "website",
+      "question": "What frontend framework are you interested in?",
+      "type": "multiple",
+      "options": [
+        { "key": "React", "value": "react" },
+        { "key": "Vue", "value": "vue" }
+      ],
+      "required": true
+    },
+    {
+      "id": 5,
+      "parentQuestionId": 4,
+      "value": "react",
+      "question": "Are you familiar with React?",
+      "type": "multiple",
+      "options": [
+        { "key": "No", "value": 0, "resultCode": 1 },
+        { "key": "Yes", "value": 1, "resultCode": 2 }
+      ],
+      "required": true
+    },
+    {
+      "id": 6,
+      "parentQuestionId": 4,
+      "value": "vue",
+      "question": "Are you familiar with Vue?",
+      "type": "multiple",
+      "options": [
+        { "key": "No", "value": 0, "resultCode": 3 },
+        { "key": "Yes", "value": 1, "resultCode": 4 }
+      ],
+      "required": true
+    },
+    {
+      "id": 7,
+      "parentQuestionId": 3,
+      "value": "data",
+      "question": "What programming language are you comfortable with?",
+      "type": "multiple",
+      "options": [
+        { "key": "Python", "value": "python" },
+        { "key": "R", "value": "r" }
+      ],
+      "required": true
+    },
+    {
+      "id": 8,
+      "parentQuestionId": 7,
+      "value": "python",
+      "question": "Are you familiar with data visualization libraries like Matplotlib or Plotly?",
+      "type": "multiple",
+      "options": [
+        { "key": "No", "value": 0, "resultCode": 5 },
+        { "key": "Yes", "value": 1, "resultCode": 6 }
+      ],
+      "required": true
+    },
+    {
+      "id": 9,
+      "parentQuestionId": 7,
+      "value": "r",
+      "question": "What statistical analysis techniques do you want to learn?",
+      "type": "multiple",
+      "options": [
+        { "key": "Regression analysis", "value": 0, "resultCode": 7 },
+        { "key": "Machine learning algorithms", "value": 1, "resultCode": 8 },
+        { "key": "Want more advance", "value": 2, "resultCode": 9 }
+      ],
+      "required": true
+    }
+  ],
+  "results": [
+    {
+      "id": 1,
+      "resultCode": 1,
+      "message": "Please study ReactJS at: https://react.dev/"
+    },
+    {
+      "id": 2,
+      "resultCode": 2,
+      "message": "That's great you should start building react applications"
+    },
+    {
+      "id": 3,
+      "resultCode": 3,
+      "message": "Please study VueJS at: https://vuejs.org/"
+    },
+    {
+      "id": 4,
+      "resultCode": 4,
+      "message": "That's great you should start building VueJS applications"
+    },
+    {
+      "id": 5,
+      "resultCode": 5,
+      "message": "Start by learning data visualization libraries for better analysis."
+    },
+    {
+      "id": 6,
+      "resultCode": 6,
+      "message": "You can explore advanced data visualization techniques."
+    },
+    {
+      "id": 7,
+      "resultCode": 7,
+      "message": "R is well-suited for performing regression analysis."
+    },
+    {
+      "id": 8,
+      "resultCode": 8,
+      "message": "Explore R's capabilities in implementing machine learning algorithms."
+    },
+    {
+      "id": 9,
+      "resultCode": 9,
+      "message": "Please Check https://www.r-project.org/ for more details"
+    }
+  ]
+}

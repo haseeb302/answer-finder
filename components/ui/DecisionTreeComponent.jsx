@@ -21,8 +21,6 @@ const DecisionTreeComponent = ({ data }) => {
     answers.push(newAnswer);
     setAnswers([...answers]);
 
-    console.log(answers);
-
     if (options?.length > 0) {
       const option = options.find((option) => option.value == answer);
       setResultCode(option.resultCode);
@@ -68,22 +66,22 @@ const DecisionTreeComponent = ({ data }) => {
                   type="text"
                   className="w-full p-5 rounded-md"
                   value={answer}
-                  required={required ? true : false}
                   onChange={(e) => setAnswer(e.target.value)}
+                  placeholder="Enter your answer"
                 />
               </div>
             </div>
           )}
           {type == "number" && (
             <div className="flex bg-gray-700 p-6 items-center gap-5 rounded-md">
-              <div className="bg-white border rounded-md p-3">10</div>
+              <div className="bg-white border rounded-md p-3">Numeric</div>
               <div className="grow">
                 <input
                   type="number"
                   value={answer}
                   className="w-full p-5 rounded-md"
-                  required={required ? true : false}
                   onChange={(e) => setAnswer(e.target.value)}
+                  placeholder="Enter your answer"
                 />
               </div>
             </div>
@@ -144,7 +142,6 @@ const DecisionTreeComponent = ({ data }) => {
       );
       return questions[idx];
     } else {
-      //   setCurrentQuestionIndex((prevState) => prevState + 1);
       return currentQuestion;
     }
   };
@@ -181,7 +178,9 @@ const DecisionTreeComponent = ({ data }) => {
   return (
     <div>
       <div className="text-center my-5">
-        <h1 className="text-4xl font-extrabold text-violet-500">Finder</h1>
+        <h1 className="text-4xl font-extrabold text-violet-500">
+          Find Answers
+        </h1>
       </div>
       <div className="flex justify-center p-12 gap-10">
         {!resultCode ? (

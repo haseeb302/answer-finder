@@ -1,17 +1,27 @@
-import Decision from "@/components/ui/Decision";
-import treeData from "@/components/ui/data2.json";
+"use client";
 
-console.log(treeData.questions);
+import DecisionTreeComponent from "@/components/ui/DecisionTreeComponent";
+import treeData2 from "@/components/data2.json";
+import treeData from "@/components/data.json";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
+  const [data, setData] = useState(null);
   return (
     <main className="">
-      {/* <DecisionTreeComponent data={treeData} /> */}
-      <Decision data={treeData} />
+      {data ? (
+        <DecisionTreeComponent data={data} />
+      ) : (
+        <div className="flex flex-row min-h-screen justify-center items-center space-x-4">
+          <Button className="p-10" onClick={() => setData(treeData)}>
+            Dataset 1
+          </Button>
+          <Button className="p-10" onClick={() => setData(treeData2)}>
+            Dataset 2
+          </Button>
+        </div>
+      )}
     </main>
   );
 }
-
-// 1. Show questions with isAnswered = false & if subquestion.length = 0 move to next question
-// otherwise move to subquestion and repeat;
-// 2. Save answer on a button click and set isAnswered = true. Show next question based on condition above

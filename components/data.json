@@ -13,6 +13,12 @@
       "required": false
     },
     {
+      "id": 10,
+      "question": "What is your email?",
+      "type": "string",
+      "required": false
+    },
+    {
       "id": 3,
       "question": "What is your goal for learning programming?",
       "type": "multiple",
@@ -26,11 +32,11 @@
       "id": 4,
       "parentQuestionId": 3,
       "value": "website",
-      "question": "What frontend framework are you interested in?",
+      "question": "Are you interested in frontend or backend frameworks?",
       "type": "multiple",
       "options": [
-        { "key": "React", "value": "react" },
-        { "key": "Vue", "value": "vue" }
+        { "key": "Frontend", "value": "frontend" },
+        { "key": "Backend", "value": "backend" }
       ],
       "required": true
     },
@@ -94,6 +100,67 @@
         { "key": "Want more advance", "value": 2, "resultCode": 9 }
       ],
       "required": true
+    },
+    {
+      "id": 11,
+      "parentQuestionId": 4,
+      "value": "angular",
+      "question": "Are you familiar with Angular?",
+      "type": "multiple",
+      "options": [
+        { "key": "No", "value": 0, "resultCode": 10 },
+        { "key": "Yes", "value": 1, "resultCode": 11 }
+      ],
+      "required": true
+    },
+    {
+      "id": 12,
+      "parentQuestionId": 4,
+      "value": "backend",
+      "question": "What backend language are you interested in?",
+      "type": "multiple",
+      "options": [
+        { "key": "Go", "value": "go" },
+        { "key": "Node.js", "value": "node" }
+      ],
+      "required": true
+    },
+    {
+      "id": 13,
+      "parentQuestionId": 11,
+      "value": "go",
+      "question": "Do you have any experience in Go Language?",
+      "type": "multiple",
+      "options": [
+        { "key": "Yes", "value": 1, "resultCode": 12 },
+        { "key": "No", "value": 0, "resultCode": 13 }
+      ],
+      "required": true
+    },
+    {
+      "id": 14,
+      "parentQuestionId": 11,
+      "value": "node",
+      "question": "Are you new to Node.js?",
+      "type": "multiple",
+      "options": [
+        { "key": "Yes", "value": 1, "resultCode": 14 },
+        { "key": "No", "value": 0, "resultCode": 15 }
+      ],
+      "required": true
+    },
+    {
+      "id": 15,
+      "parentQuestionId": 4,
+      "value": "frontend",
+      "question": "What frontend framework are you interested in?",
+      "type": "multiple",
+      "options": [
+        { "key": "React", "value": "react" },
+        { "key": "Vue", "value": "vue" },
+        { "key": "Angular", "value": "angular" }
+      ],
+      "required": true
     }
   ],
   "results": [
@@ -141,6 +208,36 @@
       "id": 9,
       "resultCode": 9,
       "message": "Please Check https://www.r-project.org/ for more details"
+    },
+    {
+      "id": 10,
+      "resultCode": 10,
+      "message": "You can learn more about angular at https://angular.io/"
+    },
+    {
+      "id": 11,
+      "resultCode": 11,
+      "message": "That's great! Angular is a nice frontend framework."
+    },
+    {
+      "id": 12,
+      "resultCode": 12,
+      "message": "Cool! Go Language is now becoming popular, keep practicing."
+    },
+    {
+      "id": 13,
+      "resultCode": 13,
+      "message": "You can learn Go Programming Language at https://go.dev/"
+    },
+    {
+      "id": 14,
+      "resultCode": 14,
+      "message": "You can do a lot with Node.js"
+    },
+    {
+      "id": 15,
+      "resultCode": 15,
+      "message": "You can learn Node.js. Check here https://nodejs.org/en"
     }
   ]
 }
