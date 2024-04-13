@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "parentQuestionId": 4,
+      "parentQuestionId": 15,
       "value": "react",
       "question": "Are you familiar with React?",
       "type": "multiple",
@@ -54,7 +54,7 @@
     },
     {
       "id": 6,
-      "parentQuestionId": 4,
+      "parentQuestionId": 15,
       "value": "vue",
       "question": "Are you familiar with Vue?",
       "type": "multiple",
@@ -103,7 +103,7 @@
     },
     {
       "id": 11,
-      "parentQuestionId": 4,
+      "parentQuestionId": 15,
       "value": "angular",
       "question": "Are you familiar with Angular?",
       "type": "multiple",

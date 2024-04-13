@@ -16,7 +16,7 @@ const DecisionTreeComponent = ({ data }) => {
   const [resultCode, setResultCode] = useState(null);
   const [questions, setQuestions] = useState(data.questions);
 
-  const handleAnswer = (questionId, answer, text, options = []) => {
+  const handleAnswer = (questionId, answer, text, type, options = []) => {
     const newAnswer = { answer, questionId, text };
     answers.push(newAnswer);
     setAnswers([...answers]);
@@ -26,10 +26,14 @@ const DecisionTreeComponent = ({ data }) => {
       setResultCode(option.resultCode);
     }
 
-    const questionIndex = questions.findIndex(
-      (question) => question.id == questionId
-    );
-    setCurrentQuestionIndex(questionIndex + 1);
+    if (type === "multiple") {
+      const questionIndex = questions.findIndex(
+        (question) => question.value == answer
+      );
+      setCurrentQuestionIndex(questionIndex);
+    } else {
+      setCurrentQuestionIndex((prevState) => prevState + 1);
+    }
 
     setAnswer("");
   };
@@ -111,7 +115,7 @@ const DecisionTreeComponent = ({ data }) => {
                 ? "bg-violet-400"
                 : "bg-violet-500"
             } w-full rounded-md p-5 text-white font-bold hover:bg-violet-700`}
-            onClick={() => handleAnswer(id, answer, text, options)}
+            onClick={() => handleAnswer(id, answer, text, type, options)}
             disabled={required && answer?.length === 0 ? true : false}
           >
             Submit
@@ -123,9 +127,10 @@ const DecisionTreeComponent = ({ data }) => {
 
   const getCurrentQuestion = () => {
     const currentQuestion = questions[currentQuestionIndex];
-
+    console.log(currentQuestion);
     // check if has parent question
     if (currentQuestion.hasOwnProperty("parentQuestionId")) {
+      // console.log(currentQuestion);
       const subQuestions = questions.filter(
         (question) =>
           question.parentQuestionId == currentQuestion.parentQuestionId
